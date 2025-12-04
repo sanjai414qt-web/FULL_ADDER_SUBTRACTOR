@@ -1,6 +1,8 @@
 # FULL_ADDER_SUBTRACTOR
+**Date:04/12/2025**
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
+
 
 **AIM:**
 
@@ -43,6 +45,37 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+Full Adder
+-------------------------------------
+// Full Adder in Verilog
+```
+module full_adder (
+    input  wire a, b, cin,   // Inputs
+    output wire sum, carry   // Outputs
+);
+
+    // Logic equations
+    assign sum   = a ^ b ^ cin;                  // XOR for sum
+    assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
+
+endmodule
+```
+Full Sub
+-------------------------------------
+// Full Subtractor in Verilog
+```
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
+```
+
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
@@ -50,10 +83,47 @@ Write the detailed procedure here
 **RTL Schematic**
 
 **Output Timing Waveform**
+**Full Adder**
+<img width="837" height="524" alt="Screenshot 2025-12-04 161921" src="https://github.com/user-attachments/assets/8b0eee31-0772-40f1-bd93-d1dcf556573d" />
+
+<img width="1294" height="358" alt="Screenshot 2025-12-04 161936" src="https://github.com/user-attachments/assets/edbef774-feca-440b-874f-ac3e6983f731" />
+
+
+**Full Subtractor**
+<img width="910" height="403" alt="Screenshot 2025-12-04 162002" src="https://github.com/user-attachments/assets/4f52154c-a979-46e5-979f-29f88012ac91" />
+
+<img width="1231" height="393" alt="Screenshot 2025-12-04 162029" src="https://github.com/user-attachments/assets/25a1acf2-f00b-4782-aacf-ffaea1615558" />
 
 **Result:**
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
+.
+.
+.
+
+.
+.
+.
+
+.
+.
+
+.
+.
+.
+
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
 
 
 
